@@ -3,6 +3,16 @@ package graph;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
+/**
+ * @author Chandra
+ *
+ */
+
+/*
+Algo : Disjoint set -KRUSKAL MST
+
+ */
+
 public class KruskalMST {
 
 	public static void main(String[] args) {

@@ -13,13 +13,16 @@ package recursion;
  */
 class StealMaximum {
 	
-	static int stealMax(int[] money,int nextChoosen,int sum){
-		if(nextChoosen>=money.length){
+	static int stealMax(int[] money,int choosen,int sum){
+		if(choosen>=money.length){
 			return sum;
 		}
 		
-		int c1 = stealMax(money,nextChoosen+2,sum+money[nextChoosen]); //when money is stolen then thief can not select next home so next index increased +2
-		int c2 = stealMax(money,nextChoosen+1,sum); //when money is not stolen then sum will not increase and thief can select consecutive home so index is increased to +1
+		// next chosen home to steal
+		int c1 = stealMax(money,choosen+2,sum+money[choosen]); //when money is stolen then thief can not select next home so next index increased +2
+		
+		//not stolen from this home so can stole next
+		int c2 = stealMax(money,choosen+1,sum); //when money is not stolen then sum will not increase and thief can select consecutive home so index is increased to +1
 		
 		return Math.max(c1, c2);
 		
